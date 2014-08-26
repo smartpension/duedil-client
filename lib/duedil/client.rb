@@ -1,12 +1,16 @@
+require 'active_support'
 require 'net/http'
 require 'cgi'
 
-require "duedil/version"
 require 'duedil/response'
 
 module Duedil
-  class Client
-    attr_accessor :api_key, :version, :base_url, :sandbox, :locale
+  module Client
+    extend ActiveSupport::Concern
+
+    included do
+      attr_accessor :api_key, :version, :base_url, :sandbox, :locale
+    end
 
     def initialize(options = {})
       @api_key  = options.delete(:api_key)
@@ -15,16 +19,6 @@ module Duedil
       @sandbox  = options.delete(:sandbox) || true
       @locale   = options.delete(:locale) || 'uk'
       @http     = options.delete(:http) || Net::HTTP
-    end
-
-    def company(company_id)
-      path = path "companies/#{company_id}"
-      get path
-    end
-
-    def companies(filters = {})
-      path = path 'companies'
-      get path, filters: filters
     end
 
     private
@@ -42,7 +36,7 @@ module Duedil
       "#{base_path}/#{endpoint}"
     end
 
-    def get(path, params = {})
+    def request(path, params = {})
       request_uri = request_uri(path, params.merge(:api_key => api_key))
       response = @http.get_response(base_url, request_uri)
       Response.new(response)
