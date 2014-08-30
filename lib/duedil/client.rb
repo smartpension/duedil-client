@@ -16,7 +16,7 @@ module Duedil
       @api_key  = options.delete(:api_key)
       @version  = options.delete(:version)
       @base_url = options.delete(:base_url)
-      @sandbox  = options.delete(:sandbox) || true
+      @sandbox  = options.delete(:sandbox).present?
       @locale   = options.delete(:locale) || 'uk'
       @http     = options.delete(:http) || Net::HTTP
     end

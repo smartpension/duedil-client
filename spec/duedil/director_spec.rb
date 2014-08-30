@@ -10,6 +10,7 @@ describe Duedil::Director do
     @client = Duedil::Director.new version: @version,
                                    base_url: @base_url,
                                    api_key: 'test',
+                                   sandbox: 'true',
                                    http: @http
   end
 
