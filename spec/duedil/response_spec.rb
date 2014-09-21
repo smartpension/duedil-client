@@ -50,4 +50,12 @@ describe Duedil::Response do
       expect(@response.object).to be_instance_of Duedil::Struct
     end
   end
+
+  describe 'hash method' do
+    it 'delegates hash to object' do
+      allow(@http_response).to receive(:body).and_return('{"response":{"foo":"bar"}}')
+
+      expect(@response.hash).to be_eql @response.object.hash
+    end
+  end
 end

@@ -19,6 +19,10 @@ module Duedil
       code.to_i == 200
     end
 
+    def hash
+      object.hash
+    end
+
     def json?
       self['Content-Type'].split(';').first == 'application/json'
     end
