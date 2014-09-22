@@ -58,4 +58,22 @@ describe Duedil::Response do
       expect(@response.hash).to be_eql @response.object.hash
     end
   end
+
+  describe 'list method' do
+    context 'when the hash has data' do
+      it 'should return data hash' do
+        allow(@http_response).to receive(:body).and_return('{"response":{"data":[{"foo":"bar"}]}}')
+
+        expect(@response.list).to be_eql [{"foo" => "bar"}]
+      end
+    end
+
+    context 'when the hash does not have data' do
+      it 'should return nil' do
+        allow(@http_response).to receive(:body).and_return('{"response":{"foo":"bar"}}')
+
+        expect(@response.list).to be_nil
+      end
+    end
+  end
 end

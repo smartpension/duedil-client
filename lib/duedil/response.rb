@@ -23,6 +23,10 @@ module Duedil
       object.hash
     end
 
+    def list
+      hash['data'].map(&:hash) if hash['data'].present?
+    end
+
     def json?
       self['Content-Type'].split(';').first == 'application/json'
     end
