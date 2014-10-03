@@ -12,19 +12,19 @@ module Duedil
       request path
     end
 
-    def companies(director_id)
+    def companies(director_id, filters = {})
       path = path "directors/#{director_id}/companies"
-      request path
+      request path, filters
     end
 
-    def directorships(director_id)
+    def directorships(director_id, filters = {})
       path = path "directors/#{director_id}/directorships"
-      request path
+      request path, filters
     end
 
-    def service_addresses(director_id)
+    def service_addresses(director_id, filters = {})
       path = path "directors/#{director_id}/service-addresses"
-      request path
+      request path, filters
     end
 
   end

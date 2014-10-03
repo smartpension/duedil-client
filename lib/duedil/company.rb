@@ -12,74 +12,74 @@ module Duedil
       request path
     end
 
-    def registered_address(company_id)
+    def registered_address(company_id, filters = {})
       path = path "companies/#{company_id}/registered-address"
-      request path
+      request path, filters
     end
 
-    def previous_company_names(company_id)
+    def previous_company_names(company_id, filters = {})
       path = path "companies/#{company_id}/previous-company-names"
-      request path
+      request path, filters
     end
 
-    def industries(company_id)
+    def industries(company_id, filters = {})
       path = path "companies/#{company_id}/industries"
-      request path
+      request path, filters
     end
 
-    def shareholders(company_id)
+    def shareholders(company_id, filters = {})
       path = path "companies/#{company_id}/shareholders"
-      request path
+      request path, filters
     end
 
-    def bank_accounts(company_id)
+    def bank_accounts(company_id, filters = {})
       path = path "companies/#{company_id}/bank-accounts"
-      request path
+      request path, filters
     end
 
-    def accounts(company_id)
+    def accounts(company_id, filters = {})
       path = path "companies/#{company_id}/accounts"
-      request path
+      request path, filters
     end
 
-    def accounts_details(company_id, account_id)
+    def accounts_details(company_id, account_id, filters = {})
       path = path "companies/#{company_id}/accounts/#{account_id}"
-      request path
+      request path, filters
     end
 
-    def documents(company_id)
+    def documents(company_id, filters = {})
       path = path "companies/#{company_id}/documents"
-      request path
+      request path, filters
     end
 
-    def subsidiaries(company_id)
+    def subsidiaries(company_id, filters = {})
       path = path "companies/#{company_id}/subsidiaries"
-      request path
+      request path, filters
     end
 
-    def parent(company_id)
+    def parent(company_id, filters = {})
       path = path "companies/#{company_id}/parent"
-      request path
+      request path, filters
     end
 
-    def directors(company_id)
+    def directors(company_id, filters = {})
       path = path "companies/#{company_id}/directors"
-      request path
+      request path, filters
     end
 
-    def directorships(company_id)
+    def directorships(company_id, filters = {})
       path = path "companies/#{company_id}/directorships"
-      request path
+      request path, filters
     end
 
-    def mortages(company_id)
+    def mortages(company_id, filters = {})
       path = path "companies/#{company_id}/mortages"
-      request path
+      request path, filters
     end
 
-    def service_addresses(company_id)
+    def service_addresses(company_id, filters = {})
       path = path "companies/#{company_id}/service-addresses"
-      request path
+      request path, filters
     end
 
   end

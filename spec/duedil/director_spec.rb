@@ -30,22 +30,22 @@ describe Duedil::Director do
 
   describe '#companies' do
     it 'build the correct url for fetching registered_address' do
-      allow(@http).to receive(:get_response).with(@base_url, "/v/sandbox/uk/directors/1/companies?api_key=test")
-      @client.companies(1)
+      allow(@http).to receive(:get_response).with(@base_url, "/v/sandbox/uk/directors/1/companies?limit=100&api_key=test")
+      @client.companies(1, limit: 100)
     end
   end
 
   describe '#directorships' do
     it 'build the correct url for fetching previous_company_names' do
-      allow(@http).to receive(:get_response).with(@base_url, "/v/sandbox/uk/directors/1/directorships?api_key=test")
-      @client.directorships(1)
+      allow(@http).to receive(:get_response).with(@base_url, "/v/sandbox/uk/directors/1/directorships?limit=100&api_key=test")
+      @client.directorships(1, limit: 100)
     end
   end
 
   describe '#service_addresses' do
     it 'build the correct url for fetching industries' do
-      allow(@http).to receive(:get_response).with(@base_url, "/v/sandbox/uk/directors/1/service-addresses?api_key=test")
-      @client.service_addresses(1)
+      allow(@http).to receive(:get_response).with(@base_url, "/v/sandbox/uk/directors/1/service-addresses?limit=100&api_key=test")
+      @client.service_addresses(1, limit: 100)
     end
   end
 
