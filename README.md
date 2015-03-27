@@ -21,7 +21,7 @@ Or install it yourself as:
 ### Configuration
 
 In order to instantiate the endpoint, a configuration hash is required.
-```
+```ruby
 config = {
   version: 'v3'
   base_url: 'duedil.io',
@@ -33,12 +33,12 @@ config = {
 
 ### Company Enpoint
 
-```
+```ruby
 company = Duedil::Company.new config
 ```
 
 Available methods:
-```
+```ruby
 company.all
 company.get(company_id)
 company.registered_address(company_id)
@@ -61,12 +61,12 @@ All the method have an optional argument for filtering (see duedil documentation
 
 ### Director Enpoint
 
-```
+```ruby
 director = Duedil::Director.new config
 ```
 
 Available methods:
-```
+```ruby
 director.all
 director.get(director_id)
 director.companies(director_id)
