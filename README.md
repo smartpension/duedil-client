@@ -20,12 +20,16 @@ Or install it yourself as:
 
 ### Configuration
 
-In order to instantiate the endpoint, a configuration hash is required. This hash must have keys:
-- version
-- base_url
-- api_key
-- locale
-- sandbox
+In order to instantiate the endpoint, a configuration hash is required.
+```
+config = {
+  version: 'v3'
+  base_url: 'duedil.io',
+  api_key: 'api_key',
+  locale: 'uk',
+  sandbox: true
+}
+```
 
 ### Company Enpoint
 
