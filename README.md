@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ### Configuration
 
-In order to instantiate the enpoint, a configuration hash is required. This hash must have keys:
+In order to instantiate the endpoint, a configuration hash is required. This hash must have keys:
 - version
 - base_url
 - api_key
