@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Anthony Laibe"]
   spec.email         = ["anthony@laibe.cc"]
   spec.summary       = %q{The duedil client provides a simple Ruby interface to the Duedil API.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/smartpension/duedil-client"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
