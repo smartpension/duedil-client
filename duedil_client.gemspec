@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Anthony Laibe"]
   spec.email         = ["anthony@laibe.cc"]
   spec.summary       = %q{The duedil client provides a simple Ruby interface to the Duedil API.}
+  spec.description   = %q{The duedil client provides a simple Ruby interface to the Duedil API.}
   spec.homepage      = "https://github.com/smartpension/duedil-client"
   spec.license       = "MIT"
 
@@ -18,9 +19,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rake",    "~> 10.4"
+  spec.add_development_dependency "rspec",   "~> 3.2"
 
-  spec.add_dependency "activesupport"
+  spec.add_dependency "activesupport",       "~> 4.2"
 
 end
