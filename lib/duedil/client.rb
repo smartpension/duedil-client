@@ -18,7 +18,6 @@ module Duedil
       @base_url = options.delete(:base_url)
       @sandbox  = options.delete(:sandbox).present?
       @locale   = options.delete(:locale) || 'uk'
-      @http     = options.delete(:http) || Net::HTTP
     end
 
     private
@@ -38,7 +37,7 @@ module Duedil
 
     def request(path, params = {})
       request_uri = request_uri(path, params.merge(:api_key => api_key))
-      response = @http.get_response(base_url, request_uri)
+      response = Net::HTTP.get_response(base_url, request_uri)
       Response.new(response)
     end
 
